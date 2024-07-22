@@ -262,9 +262,18 @@ This guide has demonstrated my in-depth knowledge and expertise in integrating G
    ![](images/automated-user-provisioning/13_before_user_provisioned_status.png)
    ![](images/automated-user-provisioning/14_after_user_provisioned_status.png)
 
-2. **Verify Logs**:
+2. **Verify Logs (Azure Provisioning Logs)**:
    - Check the logs to confirm that auto-provisioning has occurred.
    ![](images/automated-user-provisioning/15_log_verification.png)
+
+3. **Verify SCIM Invitations (GitHub Organization --> People)**:
+   - Check the GitHub Organization's People tab to confirm SCIM invitations is sent out.
+   ![](images/automated-user-provisioning/16_log_verification_github_repo_people_scim_invite.png)
+
+4. **Verify Audit Logs (GitHub Organizations --> Settings --> Logs --> Audit Logs)**:
+   - Visit GitHub's Organizations to access Audit Logs, followed by Settings --> Logs. Search for "`jane`" or "`captain`", click on `...` (3 dots) to expand the event, and look for Key and value of `@timestamp` or `created_at` and match with Azure provisioning log. In this example, it is `2024-07-14 13:10:49 +0100`.
+   ![](images/automated-user-provisioning/17_log_verification_github_org_audit_log1.png)
+   ![](images/automated-user-provisioning/17_log_verification_github_org_audit_log2.png)
 
 **Note:** The provisioning interval is fixed at 40 minutes. After the interval, verify that the user count has increased from 2 to 3.
 
@@ -278,7 +287,7 @@ This guide has demonstrated my in-depth knowledge and expertise in integrating G
    - Click "Applications" and select the "Authorized OAuth Apps" tab.
    - Select "Microsoft Azure AD SCIM provisioning" and revoke authorization.
    - Use the direct link: [GitHub Settings - Applications](https://github.com/settings/applications)
-   ![](images/automated-user-provisioning/16_revoke_oauth_app_authorization.png)
+   ![](images/automated-user-provisioning/18_revoke_oauth_app_authorization.png)
 
 ## Conclusion - Automated User Provisioning
 
