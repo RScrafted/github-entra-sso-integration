@@ -271,7 +271,7 @@ This guide has demonstrated my in-depth knowledge and expertise in integrating G
    ![](images/automated-user-provisioning/16_log_verification_github_repo_people_scim_invite.png)
 
 4. **Verify Audit Logs (GitHub Organizations --> Settings --> Logs --> Audit Logs)**:
-   - Visit GitHub's Organizations to access Audit Logs, followed by Settings --> Logs. Search for `Jane`, click on `... (3 dots)` to expand the event, and look for Key and value starting with `@timestamp` or `created_at`.
+   - Visit GitHub's Organizations to access Audit Logs, followed by Settings --> Logs. Search for "`jane`" or "`captain`", click on `...` (3 dots) to expand the event, and look for Key and value of `@timestamp` or `created_at` and match with Azure provisioning log. In this example, it is `2024-07-14 13:10:49 +0100`.
    ![](images/automated-user-provisioning/17_log_verification_github_org_audit_log1.png)
    ![](images/automated-user-provisioning/17_log_verification_github_org_audit_log2.png)
 
