@@ -1,11 +1,10 @@
-# GitHub Enterprise SSO with Microsoft Entra ID using SAML 
+## GitHub Enterprise SSO Integratioon with Microsoft Entra ID using SAML 
 
 ## Introduction
 
 Hi, I'm Rachit. This project focuses on setting up SSO for Microsoft Entra users to authenticate and access multiple applications. We will use GitHub Enterprise Cloud with SAML for authentication and authorization, and include automated provisioning capabilities.
 
-In this guide, I will walk you through the process of integrating GitHub Enterprise Cloud with Microsoft Entra ID (formerly Azure Active Directory) to enable Single Sign-On (SSO) using SAML. This integration will streamline the authentication process for users, providing a seamless and secure login experience.
-
+In this guide, I will walk you through the process of integrating GitHub Enterprise Cloud with Microsoft Entra ID (formerly Azure Active Directory) to enable Single Sign-On (SSO) using SAML. This integration will streamline the authentication process for users, further automating user provisioning, providing a seamless and secure login experience.
 
 ## Table of Contents
 
@@ -38,7 +37,7 @@ To get started, you need the following items:
 ## Step 1: Adding GitHub from the Gallery
 
 1. **Search GitHub Enterprise Cloud – Organization**: 
-   - There are two options; select the one with user provisioning available to automate user provisioning as stated in the [Step 8](#step-8-automated-user-provisioning).
+   - There are two options; select the one with user provisioning available to automate user provisioning as explained in [Step 8](#step-8-automated-user-provisioning).
    ![Add GitHub from Gallery](images/step1_adding_github_from_the_gallery.png)
 
 ## Step 2: Configuring Microsoft Entra SSO
@@ -75,7 +74,17 @@ To get started, you need the following items:
    - Edit the Unique User Identifier value from `user.userprincipalname` to `user.mail`.
    ![Amending Attributes & Claims](images/step2.3_ad_github_att&claims.png)
    ![Verifying Attributes & Claims](images/step2.3_ad_github_att&claims_update.png)
-   - **Note:** GitHub application expects Unique User Identifier (Name ID) to be mapped with user.mail. Every application has different requirements and attributes & claims must be amended based on the application expectations.
+
+**Note:**
+- GitHub application expects Unique User Identifier (Name ID) to be mapped with user.mail. Each application has distinct requirements, so attributes & claims must be tailored to meet the specific expectations of the application.
+
+- Only two Attribute Mapping are necessary between GitHub and Microsoft Entra ID, as highlighted in the image below.
+
+   Modifying one of these or enabling additional mappings may cause user identification or authentication and access problems or provisioning errors.
+   
+   The setting can be viewed / configured via [Entral Portal](https://entra.microsoft.com) --> Application --> Enterprise applications --> GitHub Enterprise Cloud - Organization --> Provisioning --> Provisioning --> Mapping --> Click Provision Microsoft Entra ID Users.
+
+![](images/step2.3_ad_github_att_mapping_required.png)
 
 4. **Download the Certificate (Base64)** from SAML certificates.
    - Use a text editor to open the certificate on MacOS or Notepad on Windows. I used Microsoft Visual Studio Code.
@@ -105,8 +114,14 @@ Note down the following information for [Step 5](#step-5-configuring-github-sso)
 
 
 2. **Assign Roles**:
-   - Assign the Cloud Application Administrator role to the user.
+   - Assign the Cloud Application Administrator role to the user. (This is mandatory)
    ![Assign Role](images/step3.2_assigned_test_user_role.png)
+   - Why assigning Cloud Administrator roles is mandatory?
+      - Because the GitHub App registration allows Cloud Administrator's for granting access for privileged actions in Microsoft Entra ID.
+   Visit [Entra Portal](https://entra.microsoft.com) to access `App registration` and follow steps as shown below:
+
+      ![](images/step3.2_ref1.png)
+      ![](images/step3.2_ref2.png) 
 
 **Note**: Downloading and editing the CSV template can speed up the creation of multiple users.
 
@@ -119,7 +134,7 @@ Note down the following information for [Step 5](#step-5-configuring-github-sso)
    ![Add new user to GitHub Application](images/step4.1_assign_test_user_with_aplication.png)
    ![](images/step4.2_application_assignment_succeeded.png)
 
-**Note:** Adding the Microsoft Entra Administrator to the GitHub application is essential for configuring GitHub SSO. Otherwise, the testing in [Step 5](#step-5-configuring-github-sso) will result in an erro as sho.
+**Note:** Adding the Microsoft Entra Administrator to the GitHub application is essential for configuring GitHub SSO. Otherwise, the testing in [Step 5](#step-5-configuring-github-sso) will result in an error as shown below:
 
 ![](images/step4.3_github_saml_sso_test_error.png)
 
@@ -250,6 +265,12 @@ This guide has demonstrated my in-depth knowledge and expertise in integrating G
   ![](images/automated-user-provisioning/08_az_ad_scim_provisioning_grant_access.png)
   ![](images/automated-user-provisioning/09_az_ad_scim_provisioning_verify.png)
   
+- **User Identification / Authentication and Access / Provisioning Errors**:
+   - Ensure attribute mappings between GitHub and Microsoft Entra ID are correctly configured.
+   
+      Refer to the **Notes** in the [`Step 3`](#step-3-creating-a-microsoft-entra-test-user) section for more details. 
+   
+      
 
 ### Testing Provisioning
 
