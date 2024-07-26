@@ -1,4 +1,4 @@
-## GitHub Enterprise SSO Integratioon with Microsoft Entra ID using SAML 
+## GitHub Enterprise SSO Integration with Microsoft Entra ID using SAML 
 
 ## Introduction
 
