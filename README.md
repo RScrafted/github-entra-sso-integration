@@ -37,7 +37,7 @@ To get started, you need the following items:
 ## Step 1: Adding GitHub from the Gallery
 
 1. **Search GitHub Enterprise Cloud – Organization**: 
-   - There are two options; select the one with user provisioning available to automate user provisioning as explained in [Step 8](#step-8-automated-user-provisioning).
+   - There are two options; select the one with user provisioning available to automate user provisioning as explained in [Enhancement](#1-automated-user-provisioning).
    ![Add GitHub from Gallery](images/step1_adding_github_from_the_gallery.png)
 
 ## Step 2: Configuring Microsoft Entra SSO
