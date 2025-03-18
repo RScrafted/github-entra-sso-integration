@@ -266,9 +266,10 @@ This guide has demonstrated my in-depth knowledge and expertise in integrating G
   ![](images/automated-user-provisioning/09_az_ad_scim_provisioning_verify.png)
   
 - **User Identification / Authentication and Access / Provisioning Errors**:
-   - Ensure attribute mappings between GitHub and Microsoft Entra ID are correctly configured.
+   - Ensure 2 key attribute mappings between GitHub and Microsoft Entra ID are correctly configured.
    
-      Refer to the **Notes** in the [`Step 3`](#step-3-creating-a-microsoft-entra-test-user) section for more details. 
+      Refer to the **Notes** in the [`Step 2.3`](#step-2-configuring-microsoft-entra-sso) section for more details.
+      [3] 
    
       
 
