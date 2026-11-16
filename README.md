@@ -1,24 +1,34 @@
-## GitHub Enterprise SSO Integration with Microsoft Entra ID using SAML 
+<h2> GitHub Enterprise SSO Integration with Microsoft Entra ID using SAML </h2>
+
+<h2> Table of Contents </h2>
+
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Step 1: Adding GitHub from the Gallery](#step-1-adding-github-from-the-gallery)
+- [Step 2: Configuring Microsoft Entra SSO](#step-2-configuring-microsoft-entra-sso)
+- [Step 3: Creating a Microsoft Entra Test User](#step-3-creating-a-microsoft-entra-test-user)
+- [Step 4: Assigning the Microsoft Entra Test User](#step-4-assigning-the-microsoft-entra-test-user)
+- [Step 5: Configuring GitHub SSO](#step-5-configuring-github-sso)
+- [Step 6: Creating a GitHub Test User](#step-6-creating-a-github-test-user)
+- [Step 7: Testing SSO](#step-7-testing-sso)
+  - [Option 1: Testing through Microsoft Entra](#option-1-testing-through-microsoft-entra)
+  - [Option 2: Testing through GitHub](#option-2-testing-through-github)
+- [Conclusion](#conclusion)
+- [Security Best Practices and Due Diligence](#security-best-practices-and-due-diligence)
+- [Enhancement: Automated User Provisioning](#enhancement-automated-user-provisioning)
+  - [Prerequisites](#prerequisites-1)
+  - [Steps to Enable Automated User Provisioning](#steps-to-enable-automated-user-provisioning)
+  - [Handling Authorization Errors](#handling-authorization-errors)
+  - [Testing Provisioning](#testing-provisioning)
+  - [Revoking Authorization](#revoking-authorization)
+  - [Conclusion - Automated User Provisioning](#conclusion---automated-user-provisioning)
+- [Star History](#star-history)
 
 ## Introduction
 
 Hi, I'm Rachit. This project focuses on setting up SSO for Microsoft Entra users to authenticate and access multiple applications. We will use GitHub Enterprise Cloud with SAML for authentication and authorization, and include automated provisioning capabilities.
 
 In this guide, I will walk you through the process of integrating GitHub Enterprise Cloud with Microsoft Entra ID (formerly Azure Active Directory) to enable Single Sign-On (SSO) using SAML. This integration will streamline the authentication process for users, further automating user provisioning, providing a seamless and secure login experience.
-
-## Table of Contents
-
-1. [Prerequisites](#prerequisites)
-2. [Step 1: Adding GitHub from the Gallery](#step-1-adding-github-from-the-gallery)
-3. [Step 2: Configuring Microsoft Entra SSO](#step-2-configuring-microsoft-entra-sso)
-4. [Step 3: Creating a Microsoft Entra Test User](#step-3-creating-a-microsoft-entra-test-user)
-5. [Step 4: Assigning the Microsoft Entra Test User](#step-4-assigning-the-microsoft-entra-test-user)
-6. [Step 5: Configuring GitHub SSO](#step-5-configuring-github-sso)
-7. [Step 6: Creating a GitHub Test User](#step-6-creating-a-github-test-user)
-8. [Step 7: Testing SSO](#step-7-testing-sso)
-9. [Conclusion](#conclusion)
-10. [Duty of Care and Due Diligence](#duty-of-care-and-due-diligence)
-11. [Enhancement](#enhancement)
 
 ## Prerequisites
 
@@ -172,7 +182,7 @@ The objective of this section is to create a user named Jane Doe in GitHub.
 
 ## Step 7: Testing SSO
 
-### Option 1
+### Option 1: Testing through Microsoft Entra
 
 1. **Sign in to the Azure Portal**:
    - Go to [Azure Portal](https://portal.azure.com/) and sign in with an account that has the necessary permissions.
@@ -186,7 +196,7 @@ The objective of this section is to create a user named Jane Doe in GitHub.
 
    ![Test SSO](images/step7.1.4_test_sso_az_portal.png)
 
-### Option 2
+### Option 2: Testing through GitHub
 
 1. **Go to GitHub Sign-on URL** directly and initiate the login flow. Refer [Step 2.2](#step-2-configuring-microsoft-entra-sso)
 
@@ -197,7 +207,7 @@ The objective of this section is to create a user named Jane Doe in GitHub.
 
 This guide has demonstrated my in-depth knowledge and expertise in integrating GitHub Enterprise Cloud with Microsoft Entra ID for SAML-based Single Sign-On. By following these detailed steps, you can ensure a secure and seamless login experience for your users. This project showcases my ability to implement advanced authentication solutions, highlighting my technical proficiency.
 
-## Duty of Care and Due Diligence
+## Security Best Practices and Due Diligence
 
 - Users invited or auto-provisioned should adhere to a complex password policy to enhance security. Additionally, enabling two-factor authentication (2FA) on GitHub accounts will further strengthen the security posture.
 
@@ -206,9 +216,8 @@ This guide has demonstrated my in-depth knowledge and expertise in integrating G
 - Ensure that only authorized personnel have access to configure and manage user provisioning settings. Regularly review and audit access policies and logs to maintain security and compliance within your organization.
 
 ---
-## Enhancement:
 
-## 1. Automated User Provisioning
+## Enhancement: Automated User Provisioning
 
 ### Prerequisites
 
@@ -269,9 +278,7 @@ This guide has demonstrated my in-depth knowledge and expertise in integrating G
    - Ensure 2 key attribute mappings between GitHub and Microsoft Entra ID are correctly configured.
    
       Refer to the **Notes** in the [`Step 2.3`](#step-2-configuring-microsoft-entra-sso) section for more details.
-      [3] 
-   
-      
+      [3]
 
 ### Testing Provisioning
 
@@ -311,8 +318,18 @@ This guide has demonstrated my in-depth knowledge and expertise in integrating G
    - Use the direct link: [GitHub Settings - Applications](https://github.com/settings/applications)
    ![](images/automated-user-provisioning/18_revoke_oauth_app_authorization.png)
 
-## Conclusion - Automated User Provisioning
+### Conclusion - Automated User Provisioning
 
 Automating user provisioning streamlines and enhances the efficiency of managing user access within an organization. This guide demonstrates my ability to set up and manage automated user provisioning between Azure AD and GitHub Enterprise Cloud, or any other application, effectively. This project highlights my skills in optimizing access management processes
 
 ---
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=rscrafted%2Fgithub-entra-sso-integration&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=rscrafted/github-entra-sso-integration&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=rscrafted/github-entra-sso-integration&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=rscrafted/github-entra-sso-integration&type=date&legend=top-left" />
+ </picture>
+</a>
